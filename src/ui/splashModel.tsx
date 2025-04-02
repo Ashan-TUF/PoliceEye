@@ -3,11 +3,12 @@ import { GLTF } from "three-stdlib";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { AnimationMixer, Group } from "three";
+import * as THREE from "three";
 
 type GLTFResult = GLTF & {
   nodes: { [key: string]: THREE.Object3D };
   materials: { [key: string]: THREE.Material };
-  animations: THREE.AnimationClip[]; // ✅ Include animations
+  animations: THREE.AnimationClip[];
 };
 
 interface ModelProps {
