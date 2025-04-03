@@ -29,12 +29,12 @@ const ProgressBar = () => {
   };
   return (
     <div className="absolute w-80 text-center bottom-20">
-      <p className="text-center mt-5 text-xl">පොලිස් ඇස (Police Eye)</p>
-      <p className="text-sm">
+      <p className="text-center mt-5 text-xl text-[#2C2C2C]">පොලිස් ඇස (Police Eye)</p>
+      <p className="text-sm text-[#2C2C2C]">
         To create a beautiful land for future generations to live in{" "}
         <b>freedom</b> without <b>fear</b>.
       </p>
-      <p className="text-white text-center font-bold mb-2 mt-5">
+      <p className="text-[#2C2C2C] text-center font-bold mb-2 mt-5">
         {Math.round(animatedProgress)}% Loading...
       </p>
       <div className="w-full bg-gray-800 rounded-full h-1">

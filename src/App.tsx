@@ -1,6 +1,10 @@
 import SplashScreen from "./ui/splashScreen";
 function App() {
-  return <SplashScreen />;
+  return (
+    <div className="bg-[#F1EFEC]">
+      <SplashScreen />
+    </div>
+  );
 }
 
 export default App;
