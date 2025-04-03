@@ -24,21 +24,21 @@ export function SplashModel({ url }: ModelProps) {
     mixerRef.current = new AnimationMixer(scene);
     animations.forEach((clip) => {
       const action = mixerRef.current!.clipAction(clip);
-      action.play(); // ✅ Play animation
+      action.play();
     });
   }
 
   useFrame((_, delta) => {
-    mixerRef.current?.update(delta); // ✅ Update animation on every frame
+    mixerRef.current?.update(delta);
   });
 
   return (
     <primitive
       ref={modelRef}
       object={scene}
-      scale={[1.5, 1.5, 1.5]}
-      rotation={[0, Math.PI / 30, 0]}
-      position={[0, -6.5, 0]}
+      scale={[2.5, 2.5, 2.5]}
+      rotation={[0, Math.PI / 4, 0]}
+      position={[0, 0, 0]}
     />
   );
 }
