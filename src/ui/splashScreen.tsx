@@ -10,9 +10,9 @@ const SplashScreen = () => {
       <img
         src={sriLankaLogo}
         alt="Sri Lanka Logo"
-        className="absolute top-0 w-25 h-30 blur-xs"
+        className="absolute top-5 w-25 h-30 blur-xs"
       />
-      <p className="absolute top-30 text-5xl text-[#2C2C2C]">CEYLON POLICE</p>
+      <p className="absolute top-35 text-5xl text-[#2C2C2C]">CEYLON POLICE</p>
 
       <ProgressBar />
       <Canvas className="bg-cover" camera={{ position: [0, 1, 5], fov: 50 }}>
