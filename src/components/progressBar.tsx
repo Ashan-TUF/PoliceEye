@@ -29,7 +29,7 @@ const ProgressBar = () => {
   };
   return (
     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-20 w-64">
-      <p className="text-center">බන්ධනාගාරය</p>
+      <p className="text-center mt-5">බන්ධනාගාරය</p>
       <p className="text-white text-center font-bold mb-2">
         {Math.round(animatedProgress)}% Loading...
       </p>
