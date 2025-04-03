@@ -1,18 +1,16 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls} from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { SplashModel } from "./splashModel";
 import ProgressBar from "../components/progressBar";
 
 const SplashScreen = () => {
-
   return (
     <div className="w-screen h-screen">
-      {/* <p className="text-red-500">Ashan</p> */}
-<ProgressBar/>
+      <ProgressBar />
       <Canvas className="bg-cover" camera={{ position: [0, 1, 5], fov: 50 }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={10} />
-        <SplashModel url="../models/stylized_ww1_plane.glb" />
+        <SplashModel url="../models/cartoon_airplane2_-_noir_style.glb" />
         <OrbitControls />
       </Canvas>
     </div>

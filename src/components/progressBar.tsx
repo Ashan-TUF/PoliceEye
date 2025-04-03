@@ -9,18 +9,17 @@ const ProgressBar = () => {
     const interval = setInterval(() => {
       setAnimatedProgress((prev) => {
         if (prev < progress) {
-          return prev + 1; 
+          return prev + 1;
         } else {
           clearInterval(interval);
           return progress;
         }
       });
-    }, 50); 
+    }, 50);
 
     return () => clearInterval(interval);
   }, [progress]);
 
- 
   const getColor = () => {
     const r = Math.round(232 + (77 - 232) * (animatedProgress / 100));
     const g = Math.round(37 + (150 - 37) * (animatedProgress / 100));
@@ -30,6 +29,7 @@ const ProgressBar = () => {
   };
   return (
     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-20 w-64">
+      <p className="text-center">බන්ධනාගාරය</p>
       <p className="text-white text-center font-bold mb-2">
         {Math.round(animatedProgress)}% Loading...
       </p>
