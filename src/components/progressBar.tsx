@@ -28,16 +28,16 @@ const ProgressBar = () => {
     return `rgb(${r}, ${g}, ${b})`;
   };
   return (
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-20 w-64">
-      <p className="text-center mt-5">බන්ධනාගාරය</p>
+    <div className="absolute w-80 text-center bottom-20">
+      <p className="text-center mt-5 text-xl">පොලිස් ඇස (Police Eye)</p>
       <p className="text-sm">
         To create a beautiful land for future generations to live in{" "}
         <b>freedom</b> without <b>fear</b>.
       </p>
-      <p className="text-white text-center font-bold mb-2">
+      <p className="text-white text-center font-bold mb-2 mt-5">
         {Math.round(animatedProgress)}% Loading...
       </p>
-      <div className="w-full bg-gray-800 rounded-full h-2">
+      <div className="w-full bg-gray-800 rounded-full h-1">
         <div
           className="h-full rounded-full transition-all duration-50"
           style={{
