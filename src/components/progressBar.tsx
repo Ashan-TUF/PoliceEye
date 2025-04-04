@@ -1,9 +1,11 @@
 import { useProgress } from "@react-three/drei";
 import { useState, useEffect } from "react";
+import ButtonView from "./buttonView";
 
 const ProgressBar = () => {
   const { progress } = useProgress();
   const [animatedProgress, setAnimatedProgress] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,6 +22,12 @@ const ProgressBar = () => {
     return () => clearInterval(interval);
   }, [progress]);
 
+  useEffect(() => {
+    if (animatedProgress === 100) {
+      setIsLoading(true);
+    }
+  }, [animatedProgress]);
+
   const getColor = () => {
     const r = Math.round(232 + (77 - 232) * (animatedProgress / 100));
     const g = Math.round(37 + (150 - 37) * (animatedProgress / 100));
@@ -29,15 +37,26 @@ const ProgressBar = () => {
   };
   return (
     <div className="absolute w-80 text-center bottom-20">
-      <p className="text-center mt-5 text-xl text-[#2C2C2C]">පොලිස් ඇස (Police Eye)</p>
+      <p className="text-center mt-5 text-xl text-[#2C2C2C]">
+        පොලිස් ඇස (Police Eye)
+      </p>
       <p className="text-sm text-[#2C2C2C]">
         To create a beautiful land for future generations to live in{" "}
         <b>freedom</b> without <b>fear</b>.
       </p>
-      <p className="text-[#2C2C2C] text-center font-bold mb-2 mt-5">
+
+      <p
+        className={
+          isLoading
+            ? "hidden"
+            : "text-[#2C2C2C] text-center font-bold mb-2 mt-5"
+        }
+      >
         {Math.round(animatedProgress)}% Loading...
       </p>
-      <div className="w-full bg-gray-800 rounded-full h-1">
+      <div
+        className={isLoading ? "hidden" : "w-full bg-gray-800 rounded-full h-1"}
+      >
         <div
           className="h-full rounded-full transition-all duration-50"
           style={{
@@ -46,6 +65,7 @@ const ProgressBar = () => {
           }}
         ></div>
       </div>
+      {isLoading ? <ButtonView color="bg-blue-600/60" text="Click Me" /> : null}
     </div>
   );
 };
