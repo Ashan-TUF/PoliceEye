@@ -1,8 +1,10 @@
 import { useProgress } from "@react-three/drei";
 import { useState, useEffect } from "react";
 import ButtonView from "./buttonView";
+import { useNavigate } from "react-router-dom";
 
 const ProgressBar = () => {
+  const navigate = useNavigate();
   const { progress } = useProgress();
   const [animatedProgress, setAnimatedProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
@@ -65,7 +67,14 @@ const ProgressBar = () => {
           }}
         ></div>
       </div>
-      {isLoading ? <ButtonView color="bg-blue-600/60" text="Click Me" /> : null}
+      {isLoading ? (
+        <ButtonView
+          color="bg-blue-600/60"
+          text="Login"
+          icon={import.meta.env.VITE_LOCK_ICON}
+          onClick={() => navigate("/login")}
+        />
+      ) : null}
     </div>
   );
 };

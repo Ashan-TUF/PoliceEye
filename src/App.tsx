@@ -1,9 +1,14 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SplashScreen from "./ui/splashScreen";
+import LoginScreen from "./ui/loginScreen";
 function App() {
   return (
-    <div className="bg-[#F1EFEC]">
-      <SplashScreen />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<SplashScreen />} />
+        <Route path="/login" element={<LoginScreen />} />
+      </Routes>
+    </Router>
   );
 }
 
