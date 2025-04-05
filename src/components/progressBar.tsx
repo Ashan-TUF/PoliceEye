@@ -2,6 +2,7 @@ import { useProgress } from "@react-three/drei";
 import { useState, useEffect } from "react";
 import ButtonView from "./buttonView";
 import { useNavigate } from "react-router-dom";
+import lockIcon from "../assets/icons/lock.png";
 
 const ProgressBar = () => {
   const navigate = useNavigate();
@@ -71,7 +72,7 @@ const ProgressBar = () => {
         <ButtonView
           color="bg-blue-600/60"
           text="Login"
-          icon={import.meta.env.VITE_LOCK_ICON}
+          icon={lockIcon}
           onClick={() => navigate("/login")}
         />
       ) : null}
