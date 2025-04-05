@@ -3,13 +3,10 @@ import { OrbitControls } from "@react-three/drei";
 import { SplashModel } from "./splashModel";
 import ProgressBar from "../components/progressBar";
 import sriLankaLogo from "../../src/assets/images/sriLnkaPoliceLogo.png";
-import { COLOR } from "../../public/constants/color";
 
 const SplashScreen = () => {
   return (
-    <div
-      className={`w-screen h-screen relative flex items-center justify-center bg-[${COLOR.themeColor}]`}
-    >
+    <div className="w-screen h-screen relative flex items-center justify-center bg-[#F1EFEC]">
       <Canvas camera={{ position: [0, 1, 5], fov: 50 }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={100} />

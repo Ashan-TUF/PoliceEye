@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ButtonView from "./buttonView";
 import { useNavigate } from "react-router-dom";
 import lockIcon from "../assets/icons/lock.png";
+import LoginView from "./loginView";
 
 const ProgressBar = () => {
   const navigate = useNavigate();
@@ -69,12 +70,15 @@ const ProgressBar = () => {
         ></div>
       </div>
       {isLoading ? (
-        <ButtonView
-          color="bg-blue-600/60"
-          text="Login"
-          icon={lockIcon}
-          onClick={() => navigate("/login")}
-        />
+        <>
+          <LoginView />
+          <ButtonView
+            color="bg-blue-600/60"
+            text="Login"
+            icon={lockIcon}
+            onClick={() => navigate("/login")}
+          />
+        </>
       ) : null}
     </div>
   );
