@@ -1,15 +1,14 @@
 import { useProgress } from "@react-three/drei";
 import { useState, useEffect } from "react";
 import ButtonView from "./buttonView";
-import { useNavigate } from "react-router-dom";
 import lockIcon from "../assets/icons/lock.png";
 import LoginView from "./loginView";
 
 const ProgressBar = () => {
-  const navigate = useNavigate();
   const { progress } = useProgress();
   const [animatedProgress, setAnimatedProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -71,13 +70,13 @@ const ProgressBar = () => {
       </div>
       {isLoading ? (
         <>
-          <LoginView />
           <ButtonView
             color="bg-blue-600/60"
             text="Login"
             icon={lockIcon}
-            onClick={() => navigate("/login")}
+            onClick={() => setShowLogin(true)}
           />
+          {showLogin && <LoginView />}
         </>
       ) : null}
     </div>
