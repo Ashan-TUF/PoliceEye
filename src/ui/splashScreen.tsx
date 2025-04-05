@@ -3,7 +3,7 @@ import { OrbitControls } from "@react-three/drei";
 import { SplashModel } from "./splashModel";
 import ProgressBar from "../components/progressBar";
 import sriLankaLogo from "../../src/assets/images/sriLnkaPoliceLogo.png";
-import { COLOR } from "../assets/constants/color";
+import { COLOR } from "../../public/constants/color";
 
 const SplashScreen = () => {
   return (

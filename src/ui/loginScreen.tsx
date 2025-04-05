@@ -1,4 +1,4 @@
-import { COLOR } from "../assets/constants/color";
+import { COLOR } from "../../public/constants/color";
 
 const LoginScreen = () => {
   return (
