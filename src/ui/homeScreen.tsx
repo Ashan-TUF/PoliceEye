@@ -1,4 +1,5 @@
 import sriLankaLogo from "../../src/assets/images/sriLnkaPoliceLogo.png";
+import HeaderView from "../components/headerView";
 import MenuBarView from "../components/menuBarView";
 import dashboardIcon from "../assets/icons/dashboard.png";
 import detectorIcon from "../assets/icons/detector.png";
@@ -15,6 +16,7 @@ import logoutIcon from "../assets/icons/logout.png";
 const HomeScreen = () => {
   return (
     <>
+    <HeaderView/>
       <div className="flex w-full pt-5">
         <div className="bg-white h-fit w-10 ml-2 pt-5 pb-5 top-5 rounded-4xl flex flex-col gap-4 items-center justify-center">
           <img
