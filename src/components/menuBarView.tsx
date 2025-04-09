@@ -12,11 +12,17 @@ const MenuBarView: React.FC<MenuBarViewProps> = ({
 }) => {
   return (
     <div
-      className={`${color} px-5 py-5 rounded-full transition duration-300 ease-in-out shadow-md hover:bg-[#DBDBDB]/60 cursor-pointer mt-5 flex items-center justify-center gap-2 text-[#2C2C2C]`}
+      className={`${color} px-5 py-5 rounded-full transition duration-300 ease-in-out shadow-md hover:bg-[#DBDBDB]/60 cursor-pointer mt-5 flex items-center gap-4 text-[#2C2C2C]`}
       onClick={onClick}
     >
-      <img src={icon} alt={text} className="w-5 h-5" />
-      <span className="text-base">{text}</span>
+      {icon && (
+        <div className="flex-shrink-0 ps-5">
+          <img src={icon} alt={text} className="w-8 h-8" />
+        </div>
+      )}
+      <div className="flex-grow text-center">
+        <span className="text-base font-semibold">{text}</span>
+      </div>
     </div>
   );
 };

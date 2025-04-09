@@ -1,12 +1,49 @@
 import sriLankaLogo from "../../src/assets/images/sriLnkaPoliceLogo.png";
 import MenuBarView from "../components/menuBarView";
-import lockIcon from "../assets/icons/lock.png";
+import dashboardIcon from "../assets/icons/dashboard.png";
+import detectorIcon from "../assets/icons/detector.png";
+import prisonersIcon from "../assets/icons/prisoners.png";
+import appointmentsIcon from "../assets/icons/appointments.png";
+import gangsIcon from "../assets/icons/gangs.png";
+import officerIcon from "../assets/icons/officer.png";
+import noticeIcon from "../assets/icons/notice.png";
+import menuIcon from "../assets/icons/menu.png";
+import profileIcon from "../assets/icons/profile.png";
+import settingIcon from "../assets/icons/setting.png";
+import moonIcon from "../assets/icons/moon.png";
+import logoutIcon from "../assets/icons/logout.png";
 const HomeScreen = () => {
   return (
     <>
       <div className="flex w-full pt-5">
-        <div className="bg-white p-5 h-40 w-10 ms-2 top-5 rounded-4xl"></div>
-        <div className="bg-white p-5 h-[900px] w-100 ms-20 top-5 rounded-4xl ">
+        <div className="bg-white h-fit w-10 ml-2 pt-5 pb-5 top-5 rounded-4xl flex flex-col gap-4 items-center justify-center">
+          <img
+            src={menuIcon}
+            alt="menu icon"
+            className="w-5 h-5 hover:opacity-60 cursor-pointer"
+          />
+          <img
+            src={profileIcon}
+            alt="profile icon"
+            className="w-5 h-5 hover:opacity-60 cursor-pointer"
+          />
+          <img
+            src={settingIcon}
+            alt="setting icon"
+            className="w-5 h-5 hover:opacity-60 cursor-pointer"
+          />
+          <img
+            src={moonIcon}
+            alt="moon icon"
+            className="w-5 h-5 hover:opacity-60 cursor-pointer"
+          />
+          <img
+            src={logoutIcon}
+            alt="logout icon"
+            className="w-5 h-5 hover:opacity-60 cursor-pointer"
+          />
+        </div>
+        <div className="bg-white p-5 pb-10 h-fit w-80 ms-20 top-5 rounded-4xl">
           <p className="text-2xl text-[#2C2C2C] text-center font-semibold leading-none">
             පොලිස් ඇස
           </p>
@@ -14,57 +51,50 @@ const HomeScreen = () => {
             Police Eye
           </p>
           <MenuBarView
-            text="Login"
-            icon={lockIcon}
+            text="Dashboard"
+            icon={dashboardIcon}
+            onClick={() => {
+              console.log("Login Clicked");
+            }}
+          />
+          <MenuBarView
+            text="Criminal Detector"
+            icon={detectorIcon}
             onClick={() => {
               console.log("Login clicked");
             }}
           />
           <MenuBarView
-            text="Login"
-            icon={lockIcon}
+            text="Manage Prisoners"
+            icon={prisonersIcon}
             onClick={() => {
               console.log("Login clicked");
             }}
           />
           <MenuBarView
-            text="Login"
-            icon={lockIcon}
+            text="Manage Appointments"
+            icon={appointmentsIcon}
             onClick={() => {
               console.log("Login clicked");
             }}
           />
           <MenuBarView
-            text="Login"
-            icon={lockIcon}
+            text="Identified Gangs"
+            icon={gangsIcon}
             onClick={() => {
               console.log("Login clicked");
             }}
           />
           <MenuBarView
-            text="Login"
-            icon={lockIcon}
+            text="Manage Officers"
+            icon={officerIcon}
             onClick={() => {
               console.log("Login clicked");
             }}
           />
           <MenuBarView
-            text="Login"
-            icon={lockIcon}
-            onClick={() => {
-              console.log("Login clicked");
-            }}
-          />
-          <MenuBarView
-            text="Login"
-            icon={lockIcon}
-            onClick={() => {
-              console.log("Login clicked");
-            }}
-          />
-          <MenuBarView
-            text="Login"
-            icon={lockIcon}
+            text="Manage Notice Board"
+            icon={noticeIcon}
             onClick={() => {
               console.log("Login clicked");
             }}
