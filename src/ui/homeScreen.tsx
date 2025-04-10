@@ -17,7 +17,7 @@ const HomeScreen = () => {
   return (
     <div className="w-screen min-h-screen overflow-x-hidden">
     <HeaderView/>
-      {/* <div className="flex w-full pt-5">
+      <div className="flex w-full pt-5">
         <div className="bg-white h-fit w-10 ml-2 pt-5 pb-5 top-5 rounded-4xl flex flex-col gap-4 items-center justify-center">
           <img
             src={menuIcon}
@@ -110,7 +110,7 @@ const HomeScreen = () => {
           />
           <p className="text-xl text-[#2C2C2C] mt-4">CEYLON POLICE</p>
         </div>
-      </div> */}
+      </div>
       <p className="absolute bottom-5  left-1/2 transform -translate-x-1/2 text-[#2C2C2C]">
         Developed by <b>Ashan Kavindu</b> | © 2025.
       </p>
