@@ -1,4 +1,3 @@
-import sriLankaLogo from "../../src/assets/images/sriLnkaPoliceLogo.png";
 import HeaderView from "../components/headerView";
 import MenuBarView from "../components/menuBarView";
 import dashboardIcon from "../assets/icons/dashboard.png";
@@ -17,8 +16,8 @@ const HomeScreen = () => {
   return (
     <div className="w-screen min-h-screen overflow-x-hidden">
       <HeaderView />
-      <div className="flex w-full pt-5">
-        <div className="bg-white h-fit w-10 ml-2 pt-5 pb-5 top-5 rounded-4xl flex flex-col gap-4 items-center justify-center">
+      <div className="w-full pt-5 flex">
+        <div className="bg-white h-fit w-10 ml-2 pt-5 pb-5 top-5 rounded-4xl flex-col gap-4 items-center justify-center  hidden xl:flex">
           <img
             src={menuIcon}
             alt="menu icon"
@@ -45,7 +44,7 @@ const HomeScreen = () => {
             className="w-5 h-5 hover:opacity-60 cursor-pointer"
           />
         </div>
-        <div className="bg-white p-5 pb-10 h-fit w-80 ms-20 top-5 rounded-4xl">
+        <div className="bg-white p-5 pb-10 h-fit w-80 ms-20 top-5 rounded-4xl  hidden xl:flex flex-col">
           <p className="text-2xl text-[#2C2C2C] text-center font-semibold leading-none">
             පොලිස් ඇස
           </p>
@@ -102,13 +101,8 @@ const HomeScreen = () => {
             }}
           />
         </div>
-        <div className="flex flex-col items-center grow">
-          <img
-            src={sriLankaLogo}
-            alt="Sri Lanka Logo"
-            className="w-25 h-30 blur-xs"
-          />
-          <p className="text-xl text-[#2C2C2C] mt-4">CEYLON POLICE</p>
+        <div className="flex h-50 grow p-2 md:p-10">
+          <div className="w-full xl:w-1/2 h-full bg-white rounded-4xl"></div>
         </div>
       </div>
       <p className="fixed w-full bottom-5 text-sm text-center text-[#2C2C2C]">
