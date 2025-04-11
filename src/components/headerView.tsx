@@ -1,13 +1,22 @@
 import sriLankaLogo from "../../src/assets/images/sriLnkaPoliceLogo.png";
 import searchIcon from "../../src/assets/icons/search.png";
 import cameraIcon from "../../src/assets/icons/camera.png";
+import menuIcon from "../assets/icons/menu.png";
 import BellView from "./bellView";
 
 const HeaderView = () => {
   return (
-    <div className="w-full px-1 lg:px-10 mt-5">
-      <div className="bg-white rounded-full flex justify-between px-6 py-2 shadow-md h-15 gap-5">
-        <div className="flex items-center gap-4 hover:opacity-50 cursor-pointer">
+    <div className="w-full md:px-10 md:mt-5">
+      <div className="bg-white md:rounded-full flex justify-between px-2 md:px-6 py-2 shadow-md h-15 gap-5">
+        <div className="flex items-center justify-center w-10 bg-[#f3f3f3] md:hidden">
+          <img
+            src={menuIcon}
+            alt="menu icon"
+            className="w-5 h-5 hover:opacity-60 cursor-pointer"
+          />
+        </div>
+
+        <div className="items-center gap-4 hover:opacity-50 cursor-pointer hidden md:flex">
           <img
             src={sriLankaLogo}
             alt="Sri Lanka Logo"
