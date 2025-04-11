@@ -165,7 +165,7 @@ const HeaderView = () => {
               </div>
             </li>
           </ul>
-          <div className="fixed flex w-full justify-between p-5 bottom-10">
+          <div className="fixed flex w-full justify-between p-2 ps-5 pe-5 bottom-10 bg-[#f3f3f3]">
             <img
               src={ProfileIcon}
               alt="Profile Icon"
