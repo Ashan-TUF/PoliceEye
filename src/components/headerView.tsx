@@ -62,11 +62,13 @@ const HeaderView = () => {
         </div>
       </nav>
       <div
-        className={`fixed top-0 left-0 w-full h-full z-10 bg-transparent transition-opacity duration-500 `}
+        className={`fixed top-0 left-0 w-full h-full z-10 bg-transparent transition-opacity duration-800 ${
+          showOverlay ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
         onClick={toggleMenu}
       >
         <div
-          className={`fixed top-0 left-0 bg-white/95 w-64 h-full p-5 shadow-lg transition-transform duration-500 ease-in-out ${
+          className={`fixed top-0 left-0 bg-white/95 w-64 h-full p-5 shadow-lg transition-transform duration-800 ease-in-out ${
             showOverlay ? "translate-x-full" : "-translate-x-full"
           }`}
           onClick={(e) => e.stopPropagation()}
