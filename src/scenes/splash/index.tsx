@@ -1,8 +1,8 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { SplashModel } from "./splashModel";
-import ProgressBar from "../components/progressBar";
-import sriLankaLogo from "../../src/assets/images/sriLnkaPoliceLogo.png";
+import { SplashModel } from "../../components/splashModel";
+import ProgressBar from "../../components/progressBar";
+import sriLankaLogo from "../../assets/images/sriLnkaPoliceLogo.png";
 
 const SplashScreen = () => {
   return (

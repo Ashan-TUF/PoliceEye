@@ -1,17 +1,19 @@
-import HeaderView from "../components/headerView";
-import MenuBarView from "../components/menuBarView";
-import dashboardIcon from "../assets/icons/dashboard.png";
-import detectorIcon from "../assets/icons/detector.png";
-import prisonersIcon from "../assets/icons/prisoners.png";
-import appointmentsIcon from "../assets/icons/appointments.png";
-import gangsIcon from "../assets/icons/gangs.png";
-import officerIcon from "../assets/icons/officer.png";
-import noticeIcon from "../assets/icons/notice.png";
-import menuIcon from "../assets/icons/menu.png";
-import profileIcon from "../assets/icons/profile.png";
-import settingIcon from "../assets/icons/setting.png";
-import moonIcon from "../assets/icons/moon.png";
-import logoutIcon from "../assets/icons/logout.png";
+import HeaderView from "../../components/headerView";
+import MenuBarView from "../../components/menuBarView";
+import dashboardIcon from "../../assets/icons/dashboard.png";
+import detectorIcon from "../../assets/icons/detector.png";
+import prisonersIcon from "../../assets/icons/prisoners.png";
+import appointmentsIcon from "../../assets/icons/appointments.png";
+import gangsIcon from "../../assets/icons/gangs.png";
+import officerIcon from "../../assets/icons/officer.png";
+import noticeIcon from "../../assets/icons/notice.png";
+import menuIcon from "../../assets/icons/menu.png";
+import profileIcon from "../../assets/icons/profile.png";
+import settingIcon from "../../assets/icons/setting.png";
+import moonIcon from "../../assets/icons/moon.png";
+import logoutIcon from "../../assets/icons/logout.png";
+// import LineChart from "../../components/lineChart";
+import PieChart from "../../components/pieChart";
 const HomeScreen = () => {
   return (
     <div className="w-screen min-h-screen overflow-x-hidden">
@@ -101,8 +103,9 @@ const HomeScreen = () => {
             }}
           />
         </div>
-        <div className="flex h-50 grow p-2 md:p-10">
-          <div className="w-full xl:w-1/2 h-full bg-white rounded-4xl"></div>
+        <div className="flex h-50 grow p-2 md:ps-10">
+          {/* <LineChart/> */}
+          <PieChart />
         </div>
       </div>
       <p className="fixed w-full bottom-5 text-sm text-center text-[#2C2C2C]">
