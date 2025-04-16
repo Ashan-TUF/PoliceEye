@@ -14,7 +14,7 @@ const PieChart = () => {
   }, []);
 
   return (
-    <div className="h-96 w-full xl:w-3/4 bg-white rounded-4xl shadow-lg cursor-pointer">
+    <div className="h-96 grow bg-white rounded-4xl shadow-lg cursor-pointer">
       <ResponsivePie
         data={data}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}

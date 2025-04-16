@@ -15,99 +15,67 @@ import logoutIcon from "../../assets/icons/logout.png";
 // import LineChart from "../../components/lineChart";
 import PieChart from "../../components/pieChart";
 import { HomeModel } from "../../components/homeModel";
+import LatestNewsBar from "../../components/latestNewsBar";
+
+const menuItems = [
+  { text: "Dashboard", icon: dashboardIcon },
+  { text: "Criminal Detector", icon: detectorIcon },
+  { text: "Manage Prisoners", icon: prisonersIcon },
+  { text: "Manage Appointments", icon: appointmentsIcon },
+  { text: "Identified Gangs", icon: gangsIcon },
+  { text: "Manage Officers", icon: officerIcon },
+  { text: "Manage Notice Board", icon: noticeIcon },
+];
+
 const HomeScreen = () => {
   return (
-    <div className="w-screen min-h-screen overflow-x-hidden">
+    <div className="w-screen h-screen overflow-x-hidden">
       <HeaderView />
-      <div className="w-full pt-5 flex">
+      <div className="w-full pt-5 flex overflow-y-auto">
         <div className="bg-white h-fit w-10 ml-2 pt-5 pb-5 top-5 rounded-4xl flex-col gap-4 items-center justify-center  hidden xl:flex">
-          <img
-            src={menuIcon}
-            alt="menu icon"
-            className="w-5 h-5 hover:opacity-60 cursor-pointer"
-          />
-          <img
-            src={profileIcon}
-            alt="profile icon"
-            className="w-5 h-5 hover:opacity-60 cursor-pointer"
-          />
-          <img
-            src={settingIcon}
-            alt="setting icon"
-            className="w-5 h-5 hover:opacity-60 cursor-pointer"
-          />
-          <img
-            src={moonIcon}
-            alt="moon icon"
-            className="w-5 h-5 hover:opacity-60 cursor-pointer"
-          />
-          <img
-            src={logoutIcon}
-            alt="logout icon"
-            className="w-5 h-5 hover:opacity-60 cursor-pointer"
-          />
+          {[menuIcon, profileIcon, settingIcon, moonIcon, logoutIcon].map(
+            (icon, index) => (
+              <img
+                key={index}
+                src={icon}
+                alt="slider icon"
+                className="w-5 h-5 hover:opacity-60 hover:scale-110 cursor-pointer"
+              />
+            )
+          )}
         </div>
-        <div className="bg-white p-5 pb-10 h-fit w-80 ms-20 top-5 rounded-4xl  hidden xl:flex flex-col">
+        <div className="hidden xl:flex flex-col bg-white w-80 ms-20 p-5 pb-10 h-fit top-5 rounded-4xl ">
           <p className="text-2xl text-[#2C2C2C] text-center font-semibold leading-none">
             පොලිස් ඇස
           </p>
           <p className="text-base text-[#2C2C2C] -mt-1 text-center ps-20">
             Police Eye
           </p>
-          <MenuBarView
-            text="Dashboard"
-            icon={dashboardIcon}
-            onClick={() => {
-              console.log("Login Clicked");
-            }}
-          />
-          <MenuBarView
-            text="Criminal Detector"
-            icon={detectorIcon}
-            onClick={() => {
-              console.log("Login clicked");
-            }}
-          />
-          <MenuBarView
-            text="Manage Prisoners"
-            icon={prisonersIcon}
-            onClick={() => {
-              console.log("Login clicked");
-            }}
-          />
-          <MenuBarView
-            text="Manage Appointments"
-            icon={appointmentsIcon}
-            onClick={() => {
-              console.log("Login clicked");
-            }}
-          />
-          <MenuBarView
-            text="Identified Gangs"
-            icon={gangsIcon}
-            onClick={() => {
-              console.log("Login clicked");
-            }}
-          />
-          <MenuBarView
-            text="Manage Officers"
-            icon={officerIcon}
-            onClick={() => {
-              console.log("Login clicked");
-            }}
-          />
-          <MenuBarView
-            text="Manage Notice Board"
-            icon={noticeIcon}
-            onClick={() => {
-              console.log("Login clicked");
-            }}
-          />
+          {menuItems.map(({ text, icon }) => (
+            <MenuBarView
+              key={text}
+              text={text}
+              icon={icon}
+              onClick={() => console.log(`${text} clicked`)}
+            />
+          ))}
         </div>
-        <div className="flex h-50 grow p-2 xl:ps-10 gap-10">
-          {/* <LineChart/> */}
-          <PieChart />
-          <HomeModel />
+        <div className="flex-col w-full">
+          <div className="flex h-fit grow p-2 xl:ps-10 justify-between gap-10 flex-wrap">
+            {/* <LineChart/> */}
+            <PieChart />
+            <HomeModel />
+          </div>
+          <div className="h-fit p-2 xl:ps-10">
+            <div className="rounded-4xl bg-white grow p-5 flex flex-col gap-5">
+              <span className="text-sm">Latest News</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {Array.from({ length: 7 }).map((_, index) => (
+                  <LatestNewsBar key={index} />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <p className="fixed w-full bottom-5 text-sm text-center text-[#2C2C2C]">
