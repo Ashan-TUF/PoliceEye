@@ -2,6 +2,7 @@ import { ResponsiveLine } from "@nivo/line";
 import { MockLineChartData as data } from "../data/mockLineChartData";
 const LineChart = () => {
   return (
+    <div className="h-96 w-full xl:w-3/4 bg-white rounded-4xl shadow-lg cursor-pointer">
     <ResponsiveLine
       data={data}
       margin={{ top: 50, right: 60, bottom: 50, left: 60 }}
@@ -48,7 +49,7 @@ const LineChart = () => {
           direction: "row",
           justify: false,
           translateX: 100,
-          translateY: 0,
+          translateY: 20,
           itemsSpacing: 0,
           itemDirection: "left-to-right",
           itemWidth: 80,
@@ -69,6 +70,7 @@ const LineChart = () => {
         },
       ]}
     />
+    </div>
   );
 };
 export default LineChart;

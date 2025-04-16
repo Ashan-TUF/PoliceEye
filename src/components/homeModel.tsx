@@ -38,8 +38,8 @@ function Model() {
       ref={modelRef}
       object={scene}
       scale={[2.5, 2.5, 2.5]}
-      rotation={[0, Math.PI / 12, 0]}
-      position={[0, -2.1, 0]}
+      rotation={[-0.2, 6.5, 0]}
+      position={[0.1, -2.2, 0]}
     />
   );
 }
@@ -49,7 +49,7 @@ export function HomeModel() {
     <div className="bg-white rounded-3xl h-96 w-fit hidden xl:flex shadow-lg cursor-pointer text-center items-center justify-center">
       <Canvas camera={{ position: [0, 1, 5], fov: 50 }}>
         <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 5]} intensity={2} />
+        <directionalLight position={[10, 10, 5]} intensity={10} />
         <Suspense
           fallback={
             <Html>

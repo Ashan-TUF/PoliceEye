@@ -104,7 +104,7 @@ const HomeScreen = () => {
             }}
           />
         </div>
-        <div className="flex h-50 grow p-2 md:ps-10 gap-10">
+        <div className="flex h-50 grow p-2 xl:ps-10 gap-10">
           {/* <LineChart/> */}
           <PieChart />
           <HomeModel />
