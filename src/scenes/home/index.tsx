@@ -14,6 +14,7 @@ import moonIcon from "../../assets/icons/moon.png";
 import logoutIcon from "../../assets/icons/logout.png";
 // import LineChart from "../../components/lineChart";
 import PieChart from "../../components/pieChart";
+import { HomeModel } from "../../components/homeModel";
 const HomeScreen = () => {
   return (
     <div className="w-screen min-h-screen overflow-x-hidden">
@@ -103,9 +104,10 @@ const HomeScreen = () => {
             }}
           />
         </div>
-        <div className="flex h-50 grow p-2 md:ps-10">
+        <div className="flex h-50 grow p-2 md:ps-10 gap-10">
           {/* <LineChart/> */}
           <PieChart />
+          <HomeModel />
         </div>
       </div>
       <p className="fixed w-full bottom-5 text-sm text-center text-[#2C2C2C]">

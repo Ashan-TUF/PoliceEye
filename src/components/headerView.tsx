@@ -100,8 +100,8 @@ const HeaderView = () => {
           <ul className="space-y-2 p-5">
             <li className="cursor-pointer hover:opacity-50">
               <div className="flex gap-5 items-center">
-                <img src={DashboardIcon} alt="dashboard" className="w-8 h-8" />
-                <span className="text-base">Dashboard</span>
+                <img src={DashboardIcon} alt="dashboard" className="w-5 h-5" />
+                <span className="text-xs">Dashboard</span>
               </div>
             </li>
             <li className="cursor-pointer hover:opacity-50">
@@ -109,9 +109,9 @@ const HeaderView = () => {
                 <img
                   src={DetectorIcon}
                   alt="Criminal Detector Icon"
-                  className="w-8 h-8"
+                  className="w-5 h-5"
                 />
-                <span className="text-base">Criminal Detector</span>
+                <span className="text-xs">Criminal Detector</span>
               </div>
             </li>
             <li className="cursor-pointer hover:opacity-50">
@@ -119,9 +119,9 @@ const HeaderView = () => {
                 <img
                   src={PrisonersIcon}
                   alt="Prisoners Icon"
-                  className="w-8 h-8"
+                  className="w-5 h-5"
                 />
-                <span className="text-base">Manage Prisoners</span>
+                <span className="text-xs">Manage Prisoners</span>
               </div>
             </li>
             <li className="cursor-pointer hover:opacity-50">
@@ -129,9 +129,9 @@ const HeaderView = () => {
                 <img
                   src={AppointmentsIcon}
                   alt="Manage Appointment Icon"
-                  className="w-8 h-8"
+                  className="w-5 h-5"
                 />
-                <span className="text-base">Manage Appointments</span>
+                <span className="text-xs">Manage Appointments</span>
               </div>
             </li>
             <li className="cursor-pointer hover:opacity-50">
@@ -139,9 +139,9 @@ const HeaderView = () => {
                 <img
                   src={GangsIcon}
                   alt="Identified Gangs Icon"
-                  className="w-8 h-8"
+                  className="w-5 h-5"
                 />
-                <span className="text-base">Identified Gangs</span>
+                <span className="text-xs">Identified Gangs</span>
               </div>
             </li>
             <li className="cursor-pointer hover:opacity-50">
@@ -149,9 +149,9 @@ const HeaderView = () => {
                 <img
                   src={OfficerIcon}
                   alt="Manage Officers Icon"
-                  className="w-8 h-8"
+                  className="w-5 h-5"
                 />
-                <span className="text-base">Manage Officers</span>
+                <span className="text-xs">Manage Officers</span>
               </div>
             </li>
             <li className="cursor-pointer hover:opacity-50">
@@ -159,9 +159,9 @@ const HeaderView = () => {
                 <img
                   src={NoticeIcon}
                   alt="Manage Notice Board Icon"
-                  className="w-8 h-8"
+                  className="w-5 h-5"
                 />
-                <span className="text-base">Manage Notice Board</span>
+                <span className="text-xs">Manage Notice Board</span>
               </div>
             </li>
           </ul>
@@ -169,22 +169,22 @@ const HeaderView = () => {
             <img
               src={ProfileIcon}
               alt="Profile Icon"
-              className="w-8 h-8 hover:opacity-50 cursor-pointer"
+              className="w-5 h-5 hover:opacity-50 cursor-pointer"
             />
             <img
               src={SettingIcon}
               alt="Setting Icon"
-              className="w-8 h-8 hover:opacity-50 cursor-pointer"
+              className="w-5 h-5 hover:opacity-50 cursor-pointer"
             />
             <img
               src={MoonIcon}
               alt="Moon Icon"
-              className="w-8 h-8 hover:opacity-50 cursor-pointer"
+              className="w-5 h-5 hover:opacity-50 cursor-pointer"
             />
             <img
               src={LogoutIcon}
               alt="Logout Icon"
-              className="w-8 h-8 hover:opacity-50 cursor-pointer"
+              className="w-5 h-5 hover:opacity-50 cursor-pointer"
             />
           </div>
         </div>
