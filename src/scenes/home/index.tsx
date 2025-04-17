@@ -13,7 +13,7 @@ import settingIcon from "../../assets/icons/setting.png";
 import moonIcon from "../../assets/icons/moon.png";
 import logoutIcon from "../../assets/icons/logout.png";
 // import LineChart from "../../components/lineChart";
-// import PieChart from "../../components/pieChart";
+import PieChart from "../../components/pieChart";
 // import dynamic from "next/dynamic";
 // const PieChart = dynamic(() => import("../../components/pieChart"), { ssr: false });
 import { PoliceModel } from "../../components/policeModel";
@@ -68,7 +68,7 @@ const HomeScreen = () => {
         <div className="flex-col w-full">
           <div className="flex h-fit grow p-2 xl:ps-10 justify-between gap-10 flex-wrap">
             {/* <LineChart/> */}
-            {/* <PieChart /> */}
+            <PieChart />
             <PoliceModel />
           </div>
           <div className="h-fit p-2 xl:ps-10">

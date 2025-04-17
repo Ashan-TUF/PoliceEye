@@ -1,9 +1,9 @@
-import { ResponsiveLine } from "@nivo/line";
+// import { ResponsiveLine } from "@nivo/line";
 import { MockLineChartData as data } from "../data/mockLineChartData";
 const LineChart = () => {
   return (
     <div className="h-96 w-full xl:w-3/4 bg-white rounded-4xl shadow-lg cursor-pointer">
-    <ResponsiveLine
+    {/* <ResponsiveLine
       data={data}
       margin={{ top: 50, right: 60, bottom: 50, left: 60 }}
       xScale={{ type: "point" }}
@@ -69,7 +69,7 @@ const LineChart = () => {
           ],
         },
       ]}
-    />
+    /> */}
     </div>
   );
 };
