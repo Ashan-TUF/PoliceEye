@@ -1,5 +1,5 @@
 // import { ResponsiveLine } from "@nivo/line";
-import { MockLineChartData as data } from "../data/mockLineChartData";
+// import { MockLineChartData as data } from "../data/mockLineChartData";
 const LineChart = () => {
   return (
     <div className="h-96 w-full xl:w-3/4 bg-white rounded-4xl shadow-lg cursor-pointer">

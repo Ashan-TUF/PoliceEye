@@ -1,6 +1,6 @@
 // import { ResponsivePie } from "@nivo/pie";
-import { MockPieChartData as data } from "../data/mockPieChartData";
-import { useEffect, useState } from "react";
+// import { MockPieChartData as data } from "../data/mockPieChartData";
+// import { useEffect, useState } from "react";
 
 const PieChart = () => {
   // const [isLargeScreen, setIsLargeScreen] = useState(false);
