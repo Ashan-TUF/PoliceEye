@@ -17,6 +17,7 @@ import PieChart from "../../components/pieChart";
 import { PoliceModel } from "../../components/policeModel";
 import LatestNewsBar from "../../components/latestNewsBar";
 import { TheifModel } from "../../components/theifModel";
+import Footerbase from "../../components/footerbase";
 
 const menuItems = [
   { text: "Dashboard", icon: dashboardIcon },
@@ -60,7 +61,7 @@ const HomeScreen = () => {
               onClick={() => console.log(`${text} clicked`)}
             />
           ))}
-          <TheifModel/>
+          <TheifModel />
         </div>
         <div className="flex-col w-full">
           <div className="flex h-fit grow p-2 xl:ps-10 justify-between gap-10 flex-wrap">
@@ -80,9 +81,7 @@ const HomeScreen = () => {
           </div>
         </div>
       </div>
-      <p className="fixed w-full bottom-5 text-sm text-center text-[#2C2C2C]">
-        Developed by <b>Ashan Kavindu</b> | © 2025.
-      </p>
+      <Footerbase />
     </div>
   );
 };

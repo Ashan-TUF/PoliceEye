@@ -48,7 +48,7 @@ function Model() {
 
 export function PoliceModel() {
   return (
-    <div className="bg-white rounded-3xl h-96 w-fit hidden xl:flex shadow-lg cursor-pointer text-center items-end justify-end pe-5">
+    <div className="relative bg-white rounded-3xl h-96 w-fit hidden xl:flex shadow-lg cursor-pointer text-center items-end justify-end pe-5">
       <div className="absolute h-fit bg-white/80  w-fit z-20 rounded-3xl shadow-2xl flex items-center justify-center ps-5 pe-5 mb-5 hover:scale-105 transition-all duration-300">
         <img
           src={profileIcon}

@@ -16,9 +16,11 @@ import ProfileIcon from "../assets/icons/profile.png";
 import SettingIcon from "../assets/icons/setting.png";
 import MoonIcon from "../assets/icons/moon.png";
 import LogoutIcon from "../assets/icons/logout.png";
+import ImageUploader from "./imageUploader";
 
 const HeaderView = () => {
   const [showOverlay, setShowOverlay] = useState(false);
+  const [showImageUploader, setShowImageUploader] = useState(false);
 
   const toggleMenu = () => {
     setShowOverlay(!showOverlay);
@@ -62,6 +64,7 @@ const HeaderView = () => {
                 src={cameraIcon}
                 alt="camera Icon"
                 className="  w-6 h-6 hover:opacity-50 cursor-pointer"
+                onClick={() => setShowImageUploader(true)}
               />
               <img
                 src={searchIcon}
@@ -73,6 +76,9 @@ const HeaderView = () => {
           <BellView />
         </div>
       </nav>
+      {showImageUploader && (
+        <ImageUploader onClose={() => setShowImageUploader(false)} />
+      )}
       <div
         className={`fixed top-0 left-0 w-full h-full z-10 bg-transparent transition-opacity duration-800 ${
           showOverlay
