@@ -5,7 +5,7 @@ interface MenuBarViewProps {
   onClick?: () => void;
 }
 const MenuBarView: React.FC<MenuBarViewProps> = ({
-  color = "bg-[#F1EFEC]",
+  color = "bg-[#F3F3F3]",
   text,
   icon,
   onClick,

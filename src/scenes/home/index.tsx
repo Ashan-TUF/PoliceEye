@@ -14,8 +14,9 @@ import moonIcon from "../../assets/icons/moon.png";
 import logoutIcon from "../../assets/icons/logout.png";
 // import LineChart from "../../components/lineChart";
 import PieChart from "../../components/pieChart";
-import { HomeModel } from "../../components/homeModel";
+import { PoliceModel } from "../../components/policeModel";
 import LatestNewsBar from "../../components/latestNewsBar";
+import { TheifModel } from "../../components/theifModel";
 
 const menuItems = [
   { text: "Dashboard", icon: dashboardIcon },
@@ -59,18 +60,19 @@ const HomeScreen = () => {
               onClick={() => console.log(`${text} clicked`)}
             />
           ))}
+          <TheifModel/>
         </div>
         <div className="flex-col w-full">
           <div className="flex h-fit grow p-2 xl:ps-10 justify-between gap-10 flex-wrap">
             {/* <LineChart/> */}
             <PieChart />
-            <HomeModel />
+            <PoliceModel />
           </div>
           <div className="h-fit p-2 xl:ps-10">
             <div className="rounded-4xl bg-white grow p-5 flex flex-col gap-5">
               <span className="text-sm">Latest News</span>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {Array.from({ length: 7 }).map((_, index) => (
+              <div className="grid grid-cols-1 gap-4">
+                {Array.from({ length: 5 }).map((_, index) => (
                   <LatestNewsBar key={index} />
                 ))}
               </div>

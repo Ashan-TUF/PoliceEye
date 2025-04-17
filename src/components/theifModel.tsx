@@ -4,6 +4,7 @@ import { useRef, useEffect, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { AnimationMixer, Group } from "three";
 import * as THREE from "three";
+import LightComponent from "./lightComponent";
 
 type GLTFResult = GLTF & {
   nodes: { [key: string]: THREE.Object3D };
@@ -12,9 +13,7 @@ type GLTFResult = GLTF & {
 };
 
 function Model() {
-  const { scene, animations } = useGLTF(
-    "/models/policemanModel.glb"
-  ) as GLTFResult;
+  const { scene, animations } = useGLTF("/models/theifModel.glb") as GLTFResult;
 
   const modelRef = useRef<Group>(null);
   const mixerRef = useRef<AnimationMixer | null>(null);
@@ -37,19 +36,18 @@ function Model() {
     <primitive
       ref={modelRef}
       object={scene}
-      scale={[2.5, 2.5, 2.5]}
+      scale={[2.5, 2.5, 2]}
       rotation={[-0.2, 6.5, 0]}
-      position={[0.1, -2.2, 0]}
+      position={[0.1, -2.05, 0]}
     />
   );
 }
 
-export function HomeModel() {
+export function TheifModel() {
   return (
-    <div className="bg-white rounded-3xl h-96 w-fit hidden xl:flex shadow-lg cursor-pointer text-center items-center justify-center">
+    <div className="rounded-3xl h-80 grow hidden xl:flex cursor-pointer">
       <Canvas camera={{ position: [0, 1, 5], fov: 50 }}>
         <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 5]} intensity={10} />
         <Suspense
           fallback={
             <Html>
@@ -59,6 +57,7 @@ export function HomeModel() {
             </Html>
           }
         >
+          <LightComponent />
           <Model />
         </Suspense>
 
