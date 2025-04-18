@@ -28,14 +28,14 @@ const LightComponent = () => {
     const t = state.clock.getElapsedTime();
     const whitePulse = Math.sin(t * 2);
     if (whiteLightRef.current) {
-      whiteLightRef.current.intensity = Math.max(whitePulse, 10);
+      whiteLightRef.current.intensity = Math.max(whitePulse, 50);
     }
   });
 
   return (
     <>
       <ambientLight intensity={0.2} />
-      <directionalLight
+      {/* <directionalLight
         ref={redLightRef}
         position={[5, 10, 5]}
         intensity={100}
@@ -46,7 +46,7 @@ const LightComponent = () => {
         position={[-5, 10, 5]}
         intensity={100}
         color="blue"
-      />
+      /> */}
       <directionalLight
         ref={whiteLightRef}
         position={[0, 15, 10]}

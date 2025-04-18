@@ -1,21 +1,21 @@
-// import { ResponsivePie } from "@nivo/pie";
-// import { MockPieChartData as data } from "../data/mockPieChartData";
-// import { useEffect, useState } from "react";
+import { ResponsivePie } from "@nivo/pie";
+import { MockPieChartData as data } from "../data/mockPieChartData";
+import { useEffect, useState } from "react";
 
 const PieChart = () => {
-  // const [isLargeScreen, setIsLargeScreen] = useState(false);
-  // useEffect(() => {
-  //   const checkScreenSize = () => {
-  //     setIsLargeScreen(window.innerWidth > 1536);
-  //   };
-  //   checkScreenSize();
-  //   window.addEventListener("resize", checkScreenSize);
-  //   return () => window.removeEventListener("resize", checkScreenSize);
-  // }, []);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsLargeScreen(window.innerWidth > 1536);
+    };
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   return (
     <div className="h-96 grow bg-white rounded-4xl shadow-lg cursor-pointer">
-      {/* <ResponsivePie
+      <ResponsivePie
         data={data}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
         innerRadius={0.5}
@@ -89,7 +89,7 @@ const PieChart = () => {
               ]
             : undefined
         }
-      /> */}
+      />
     </div>
   );
 };

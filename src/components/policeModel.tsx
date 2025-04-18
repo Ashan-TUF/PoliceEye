@@ -41,7 +41,7 @@ function Model() {
       object={scene}
       scale={[2.5, 2.5, 2.5]}
       rotation={[-0.2, 6.5, 0]}
-      position={[0.1, -2.2, 0]}
+      position={[0.3, -2.2, 0]}
     />
   );
 }

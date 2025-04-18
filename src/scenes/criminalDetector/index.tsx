@@ -4,15 +4,13 @@ import profileIcon from "../../assets/icons/profile.png";
 import settingIcon from "../../assets/icons/setting.png";
 import moonIcon from "../../assets/icons/moon.png";
 import logoutIcon from "../../assets/icons/logout.png";
-// import LineChart from "../../components/lineChart";
 import PieChart from "../../components/pieChart";
 import { PoliceModel } from "../../components/policeModel";
 import LatestNewsBar from "../../components/latestNewsBar";
-// import { TheifModel } from "../../components/theifModel";
 import Footerbase from "../../components/footerbase";
 import MainManu from "../../components/mainMenu";
 
-const HomeScreen = () => {
+const CriminalDetectorScreen = () => {
   return (
     <div className="w-screen h-screen overflow-x-hidden">
       <HeaderView />
@@ -29,7 +27,8 @@ const HomeScreen = () => {
             )
           )}
         </div>
-        <MainManu />
+        
+       <MainManu/>
         <div className="flex-col w-full">
           <div className="flex h-fit grow p-2 xl:ps-10 justify-between gap-10 flex-wrap">
             {/* <LineChart/> */}
@@ -52,4 +51,4 @@ const HomeScreen = () => {
     </div>
   );
 };
-export default HomeScreen;
+export default CriminalDetectorScreen;
