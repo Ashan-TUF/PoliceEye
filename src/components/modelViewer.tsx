@@ -1,5 +1,5 @@
 import { Html, OrbitControls, useGLTF } from "@react-three/drei";
-import { useRef, useEffect, Suspense} from "react";
+import { useRef, useEffect, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { AnimationMixer, Group } from "three";
 import * as THREE from "three";
@@ -38,7 +38,9 @@ const MODEL_PROPERTIES = {
 const getModelPath = (model: "thief" | "policeman"): string =>
   `/models/${model}Model.glb`;
 
-const AnimatedModel: React.FC<{ model: "thief" | "policeman" }> = ({ model }) => {
+const AnimatedModel: React.FC<{ model: "thief" | "policeman" }> = ({
+  model,
+}) => {
   const { scene, animations } = useGLTF(getModelPath(model)) as GLTFResult;
   const modelRef = useRef<Group>(null);
   const mixerRef = useRef<AnimationMixer | null>(null);
@@ -92,7 +94,9 @@ const ModelViewer: React.FC<ModelProps> = ({
           alt="police icon"
           className="w-10 h-10 m-2 hover:opacity-60 hover:scale-110 cursor-pointer rounded-full"
         />
-        <p className="text-black/80">Welcome! A.K.Kalupahana</p>
+        {enableTextBar && (
+          <p className="text-black/80">Welcome! {text}</p>
+        )}
       </div>
       <Canvas camera={{ position: [0, 1, 5], fov: 50 }}>
         <ambientLight intensity={0.5} />
