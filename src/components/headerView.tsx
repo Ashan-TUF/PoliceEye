@@ -17,8 +17,10 @@ import SettingIcon from "../assets/icons/setting.png";
 import MoonIcon from "../assets/icons/moon.png";
 import LogoutIcon from "../assets/icons/logout.png";
 import ImageUploader from "./imageUploader";
+import { useNavigate } from "react-router-dom";
 
 const HeaderView = () => {
+  const navigate = useNavigate();
   const [showOverlay, setShowOverlay] = useState(false);
   const [showImageUploader, setShowImageUploader] = useState(false);
 
@@ -26,6 +28,33 @@ const HeaderView = () => {
     setShowOverlay(!showOverlay);
   };
 
+  const menuItems = [
+    { text: "Dashboard", icon: DashboardIcon, path: "/home" },
+    {
+      text: "Criminal Detector",
+      icon: DetectorIcon,
+      path: "/criminalDetector",
+    },
+    { text: "Manage Prisoners", icon: PrisonersIcon, path: "/managePrisoners" },
+    {
+      text: "Manage Appointments",
+      icon: AppointmentsIcon,
+      path: "/manageAppointments",
+    },
+    { text: "Identified Gangs", icon: GangsIcon, path: "/identifiedGangs" },
+    { text: "Manage Officers", icon: OfficerIcon, path: "/manageOfficers" },
+    {
+      text: "Manage Notice Board",
+      icon: NoticeIcon,
+      path: "/manageNoticeBoard",
+    },
+  ];
+  const miniMenuItems = [
+    { text: "Profile", icon: ProfileIcon, path: "/profile" },
+    { text: "Settings", icon: SettingIcon, path: "/settings" },
+    { text: "Dark Mode", icon: MoonIcon, path: "/darkMode" },
+    { text: "Logout", icon: LogoutIcon, path: "/" },
+  ];
   return (
     <>
       <nav className="w-full md:px-10 md:mt-5">
@@ -104,94 +133,33 @@ const HeaderView = () => {
             </span>
           </div>
           <ul className="space-y-2 p-5">
-            <li className="cursor-pointer hover:opacity-50">
-              <div className="flex gap-5 items-center">
-                <img src={DashboardIcon} alt="dashboard" className="w-5 h-5" />
-                <span className="text-xs">Dashboard</span>
-              </div>
-            </li>
-            <li className="cursor-pointer hover:opacity-50">
-              <div className="flex gap-5 items-center">
-                <img
-                  src={DetectorIcon}
-                  alt="Criminal Detector Icon"
-                  className="w-5 h-5"
-                />
-                <span className="text-xs">Criminal Detector</span>
-              </div>
-            </li>
-            <li className="cursor-pointer hover:opacity-50">
-              <div className="flex gap-5 items-center">
-                <img
-                  src={PrisonersIcon}
-                  alt="Prisoners Icon"
-                  className="w-5 h-5"
-                />
-                <span className="text-xs">Manage Prisoners</span>
-              </div>
-            </li>
-            <li className="cursor-pointer hover:opacity-50">
-              <div className="flex gap-5 items-center">
-                <img
-                  src={AppointmentsIcon}
-                  alt="Manage Appointment Icon"
-                  className="w-5 h-5"
-                />
-                <span className="text-xs">Manage Appointments</span>
-              </div>
-            </li>
-            <li className="cursor-pointer hover:opacity-50">
-              <div className="flex gap-5 items-center">
-                <img
-                  src={GangsIcon}
-                  alt="Identified Gangs Icon"
-                  className="w-5 h-5"
-                />
-                <span className="text-xs">Identified Gangs</span>
-              </div>
-            </li>
-            <li className="cursor-pointer hover:opacity-50">
-              <div className="flex gap-5 items-center">
-                <img
-                  src={OfficerIcon}
-                  alt="Manage Officers Icon"
-                  className="w-5 h-5"
-                />
-                <span className="text-xs">Manage Officers</span>
-              </div>
-            </li>
-            <li className="cursor-pointer hover:opacity-50">
-              <div className="flex gap-5 items-center">
-                <img
-                  src={NoticeIcon}
-                  alt="Manage Notice Board Icon"
-                  className="w-5 h-5"
-                />
-                <span className="text-xs">Manage Notice Board</span>
-              </div>
-            </li>
+            {menuItems.map(({ text, icon, path }) => (
+              <li
+                className="cursor-pointer hover:opacity-50"
+                onClick={() => {
+                  navigate(path);
+                  setShowOverlay(false);
+                }}
+              >
+                <div className="flex gap-5 items-center">
+                  <img src={icon} alt={text} className="w-5 h-5" />
+                  <span className="text-xs">{text}</span>
+                </div>
+              </li>
+            ))}
           </ul>
           <div className="fixed flex w-full justify-between p-2 ps-5 pe-5 bottom-10 bg-[#f3f3f3]">
-            <img
-              src={ProfileIcon}
-              alt="Profile Icon"
-              className="w-5 h-5 hover:opacity-50 cursor-pointer"
-            />
-            <img
-              src={SettingIcon}
-              alt="Setting Icon"
-              className="w-5 h-5 hover:opacity-50 cursor-pointer"
-            />
-            <img
-              src={MoonIcon}
-              alt="Moon Icon"
-              className="w-5 h-5 hover:opacity-50 cursor-pointer"
-            />
-            <img
-              src={LogoutIcon}
-              alt="Logout Icon"
-              className="w-5 h-5 hover:opacity-50 cursor-pointer"
-            />
+            {miniMenuItems.map(({ text, icon, path }) => (
+              <img
+                src={icon}
+                alt={text}
+                className="w-5 h-5 hover:opacity-50 cursor-pointer"
+                onClick={() => {
+                  navigate(path);
+                  setShowOverlay(false);
+                }}
+              />
+            ))}
           </div>
         </div>
       </div>
