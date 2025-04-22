@@ -1,11 +1,11 @@
 import HeaderView from "../../components/headerView";
 import ModelViewer from "../../components/modelViewer";
-import LatestNewsBar from "../../components/latestNewsBar";
 import Footerbase from "../../components/footerbase";
 import MainManu from "../../components/mainMenu";
 
 import { COLOR } from "../../assets/constants/color";
 import UserImageUploader from "../../components/userImageUploader";
+import CriminalProfileView from "../../components/criminalProfileView";
 
 const CriminalDetectorScreen = () => {
   return (
@@ -25,16 +25,7 @@ const CriminalDetectorScreen = () => {
               enableLocationButton={true}
             />
           </div>
-          <div className="h-fit p-2 xl:ps-10">
-            <div className="rounded-4xl bg-white grow p-5 flex flex-col gap-5">
-              <span className="text-sm">Latest News</span>
-              <div className="grid grid-cols-1 gap-4">
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <LatestNewsBar key={index} />
-                ))}
-              </div>
-            </div>
-          </div>
+          <CriminalProfileView />
         </div>
       </div>
       <Footerbase />
