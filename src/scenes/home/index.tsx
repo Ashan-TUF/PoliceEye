@@ -14,7 +14,7 @@ const HomeScreen = () => {
         <div className="flex-col w-full">
           <div className="flex h-fit grow p-2 xl:ps-10 justify-between gap-10 flex-wrap">
             <PieChart />
-            <ModelViewer model="policeman" enableTextBar = {true} text="Ashan Kavindu"/>
+            <ModelViewer model="policeman" enableTextBar = {true} text="Welcome! Ashan Kavindu" />
           </div>
           <div className="h-fit p-2 xl:ps-10">
             <div className="rounded-4xl bg-white grow p-5 flex flex-col gap-5">

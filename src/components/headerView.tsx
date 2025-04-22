@@ -133,8 +133,9 @@ const HeaderView = () => {
             </span>
           </div>
           <ul className="space-y-2 p-5">
-            {menuItems.map(({ text, icon, path }) => (
+            {menuItems.map(({ text, icon, path }, index) => (
               <li
+                key={index}
                 className="cursor-pointer hover:opacity-50"
                 onClick={() => {
                   navigate(path);
@@ -149,8 +150,9 @@ const HeaderView = () => {
             ))}
           </ul>
           <div className="fixed flex w-full justify-between p-2 ps-5 pe-5 bottom-10 bg-[#f3f3f3]">
-            {miniMenuItems.map(({ text, icon, path }) => (
+            {miniMenuItems.map(({ text, icon, path }, index) => (
               <img
+                key={index}
                 src={icon}
                 alt={text}
                 className="w-5 h-5 hover:opacity-50 cursor-pointer"
