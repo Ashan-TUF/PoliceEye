@@ -10,7 +10,7 @@ import locationIcon from "../assets/icons/location.png";
 import switchIcon from "../assets/icons/switch.png";
 import ModelButton from "./modelButton";
 interface ModelProps {
-  model: "thief" | "policeman";
+  model: "thief" | "policeman" | "prisoner";
   textColor?: string;
   enableAddNewCriminalButton?: boolean;
   enableLocationButton?: boolean;
@@ -37,12 +37,17 @@ const MODEL_PROPERTIES = {
     rotation: [-0.2, 6.5, 0],
     position: [0.3, -2.2, 0],
   },
+  prisoner: {
+    scale: [2.5, 2.5, 2.5],
+    rotation: [-0.2, 6.5, 0],
+    position: [0.3, -2.2, 0],
+  },
 };
 
-const getModelPath = (model: "thief" | "policeman"): string =>
+const getModelPath = (model: "thief" | "policeman" | "prisoner"): string =>
   `/models/${model}Model.glb`;
 
-const AnimatedModel: React.FC<{ model: "thief" | "policeman" }> = ({
+const AnimatedModel: React.FC<{ model: "thief" | "policeman" | "prisoner" }> = ({
   model,
 }) => {
   const { scene, animations } = useGLTF(getModelPath(model)) as GLTFResult;
