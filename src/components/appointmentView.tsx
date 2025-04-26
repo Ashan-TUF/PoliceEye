@@ -2,7 +2,7 @@ import React from "react";
 import eyeIcon from "../assets/icons/eye.png";
 import alertIcon from "../assets/icons/alert.png";
 
-export interface AppointmentViewProps {
+interface AppointmentViewProps {
   appointmentId: string;
   visitorFullName: string;
   visitorNic: string;
@@ -15,6 +15,7 @@ export interface AppointmentViewProps {
   status: "Pending" | "Approved" | "Rejected" | "Completed" | "Cancelled";
   createdAt: string;
   updateAt: string;
+  warning_alert: boolean;
 }
 
 interface Props {
@@ -29,17 +30,19 @@ export const AppointmentView: React.FC<Props> = ({
   return (
     <div className="flex flex-col rounded-2xl bg-white p-5 shadow-md relative">
       <div className="flex flex-col gap-1">
-        {Object.entries(data).map(([key, value]) => (
-          <p className="text-sm text-gray-700" key={key}>
-            <span className="font-semibold">
-              {key
-                .replace(/([A-Z])/g, " $1")
-                .replace(/^./, (str) => str.toUpperCase())}
-              :
-            </span>{" "}
-            {value instanceof Date ? value.toDateString() : value}
-          </p>
-        ))}
+        {Object.entries(data)
+          .filter(([key]) => key !== "warning_alert")
+          .map(([key, value]) => (
+            <p className="text-sm text-gray-700" key={key}>
+              <span className="font-semibold">
+                {key
+                  .replace(/([A-Z])/g, " $1")
+                  .replace(/^./, (str) => str.toUpperCase())}
+                :
+              </span>{" "}
+              {value instanceof Date ? value.toDateString() : String(value)}
+            </p>
+          ))}
       </div>
 
       <div className="absolute top-5 right-5">
@@ -51,9 +54,12 @@ export const AppointmentView: React.FC<Props> = ({
           <img src={eyeIcon} alt="view icon" className="w-5 h-5" />
         </button>
       </div>
-      <div className="absolute top-15 right-5 p-2">
-        <img src={alertIcon} alt="alert icon" className="w-5 h-5" />
-      </div>
+      {data.warning_alert && (
+        <div className="absolute top-16 right-5 p-2">
+          <img src={alertIcon} alt="alert icon" className="w-5 h-5" />
+        </div>
+      )}
+
       <div className="absolute bottom-5 right-5 p-2">
         <span className="text-xs text-[#707070]">
           Appointment number: {data.appointmentId}

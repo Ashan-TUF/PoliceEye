@@ -57,7 +57,7 @@ const HeaderView = () => {
   ];
   return (
     <>
-      <nav className="w-full md:px-10 md:mt-5">
+      <nav className="w-full md:px-10 md:mt-5 mb-5">
         <div className="bg-white md:rounded-full flex justify-between px-2 md:px-6 py-2 shadow-md h-15 gap-5">
           <div className="flex items-center justify-center w-10 bg-[#f3f3f3] xl:hidden">
             <button onClick={toggleMenu}>
