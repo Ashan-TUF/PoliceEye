@@ -44,8 +44,8 @@ export const PrisonerProfileSummery: React.FC<PrisonerProfileSummeryProps> = ({
         <div className="flex flex-col justify-center items-center w-1/3">
           <div
             className={`${
-              !img ? "p-5 rounded-full bg-[#F8FAFC]" : ""
-            }w-fit h-fit `}
+              img ? "" : "p-5 rounded-full bg-[#F8FAFC]"
+            } w-fit h-fit`}
           >
             <img
               src={img || profileIcon}

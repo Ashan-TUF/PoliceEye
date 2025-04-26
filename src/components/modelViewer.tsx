@@ -38,8 +38,8 @@ const MODEL_PROPERTIES = {
     position: [0.3, -2.2, 0],
   },
   prisoner: {
-    scale: [2.5, 2.5, 2.5],
-    rotation: [-0.2, 6.5, 0],
+    scale: [2.6, 2.6, 2.6],
+    rotation: [-0.5, 6.3, 0],
     position: [0.3, -2.2, 0],
   },
 };
@@ -164,7 +164,7 @@ const ModelViewer: React.FC<ModelProps> = ({
       )}
       <Canvas camera={{ position: [0, 1, 5], fov: 50 }}>
         <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 5]} intensity={50} />
+        <directionalLight position={[10, 10, 5]} intensity={30} />
         <Suspense
           fallback={
             <Html>
