@@ -1,11 +1,11 @@
 import Footerbase from "../../components/footerbase";
 import HeaderView from "../../components/headerView";
-import MainManu from "../../components/mainMenu";
+import MainMenu from "../../components/mainMenu";
 import ModelViewer from "../../components/modelViewer";
 import { PrisonerProfileSummery } from "../../components/prisonerProfileSummery";
-import { PrisonerProfilesView } from "../../components/prisonerProfilesView";
+import profileImg from "../../assets/images/Ashan-Prof.jpg";
 
-export const ManagePrisonersScreen = () => {
+export const ManagePrisonerProfileScreen = () => {
   const prisonerData = {
     prisonerCode: "PR123456",
     fullName: "Kamal Perera",
@@ -16,24 +16,18 @@ export const ManagePrisonersScreen = () => {
     sex: "Male",
     nationality: "Sri Lankan",
     address: "Colombo, Sri Lanka",
-    job: "ElectricianHome",
+    job: "Electrician",
   } as const;
-
   return (
     <div className="w-screen h-screen overflow-x-hidden">
       <HeaderView />
       <div className="w-full pt-5 flex overflow-y-auto">
-        <MainManu />
+        <MainMenu />
         <div className="flex flex-col w-full">
           <div className="flex h-fit grow p-2 xl:ps-10 justify-between gap-10 flex-wrap">
-            <PrisonerProfileSummery data={prisonerData} enableCameraView={true} />
-            <ModelViewer
-              model="prisoner"
-              enableAddNewPrisonerButton={true}
-              enableSwitchGenderButton={true}
-            />
+            <PrisonerProfileSummery data={prisonerData} img={profileImg} />
+            <ModelViewer model="prisoner" />
           </div>
-          <PrisonerProfilesView />
         </div>
       </div>
       <Footerbase />

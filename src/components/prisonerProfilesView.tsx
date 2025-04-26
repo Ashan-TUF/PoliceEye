@@ -5,7 +5,7 @@ const viewPrisonerProfile = (prisonerCode: string) => {
   console.log(prisonerCode);
 };
 
-export const PrisonerProfileView = () => {
+export const PrisonerProfilesView = () => {
   const prisonerData = [
     {
       profilePic: profile,
