@@ -1,31 +1,35 @@
 import { PrisonerProfileRecord } from "./prisonerProfileRecord";
 import profile from "../assets/images/Ashan-Prof.jpg";
 
+const viewPrisonerProfile = (prisonerCode: string) => {
+  console.log(prisonerCode);
+};
+
 export const PrisonerProfileView = () => {
-    const prisonerData = [
-        {
-          profilePic: profile,
-          prisonerCode: "200123",
-          fullName: "Ashan Kavindu Kalupahana",
-          cellNumber: "313",
-          releaseStatus: "Released",
-        },
-        {
-          profilePic: profile,
-          prisonerCode: "200124",
-          fullName: "John Doe",
-          cellNumber: "314",
-          releaseStatus: "Released",
-        },
-        {
-          profilePic: profile,
-          prisonerCode: "200125",
-          fullName: "Jane Doe",
-          cellNumber: "315",
-          releaseStatus: "Released",
-        },
-      ] as const;
-    
+  const prisonerData = [
+    {
+      profilePic: profile,
+      prisonerCode: "200123",
+      fullName: "Ashan Kavindu Kalupahana",
+      cellNumber: "313",
+      releaseStatus: "Released",
+    },
+    {
+      profilePic: profile,
+      prisonerCode: "200124",
+      fullName: "John Doe",
+      cellNumber: "314",
+      releaseStatus: "Released",
+    },
+    {
+      profilePic: profile,
+      prisonerCode: "200125",
+      fullName: "Jane Doe",
+      cellNumber: "315",
+      releaseStatus: "Released",
+    },
+  ] as const;
+
   return (
     <div className="flex flex-col gap-3 h-fit w-full p-2 xl:ps-10 mb-10 xl:mb-20">
       <p className="text-2xl font-semibold">Prisoner Profiles</p>
@@ -38,10 +42,13 @@ export const PrisonerProfileView = () => {
       </div>
 
       <div className="flex flex-col gap-1">
-      {prisonerData.map((prisoner) => (
-          <PrisonerProfileRecord key={prisoner.prisonerCode} data={prisoner} />
+        {prisonerData.map((prisoner) => (
+          <PrisonerProfileRecord
+            key={prisoner.prisonerCode}
+            data={prisoner}
+            onViewProfile={viewPrisonerProfile}
+          />
         ))}
-
       </div>
     </div>
   );
