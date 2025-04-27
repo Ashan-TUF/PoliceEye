@@ -1,4 +1,4 @@
-interface criminalRecordViewProps {
+export interface criminalRecordViewProps {
   crime: string;
   dateOftheCrime: Date;
   numberOfMurders: number;
