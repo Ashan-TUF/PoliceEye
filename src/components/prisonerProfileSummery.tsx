@@ -1,5 +1,6 @@
 import profileIcon from "../assets/icons/user.png";
 import cameraOutLineIcon from "../assets/icons/cameraOutLine.png";
+import editIcon from "../assets/icons/edit.png";
 interface PrisonerInfoProps {
   prisonerCode: string;
   fullName: string;
@@ -17,12 +18,14 @@ interface PrisonerProfileSummeryProps {
   data: PrisonerInfoProps;
   img?: string;
   enableCameraView?: boolean;
+  enableEditButton?: boolean;
 }
 
 export const PrisonerProfileSummery: React.FC<PrisonerProfileSummeryProps> = ({
   data,
   img,
   enableCameraView,
+  enableEditButton,
 }) => {
   const formattedLabels: Record<keyof PrisonerInfoProps, string> = {
     prisonerCode: "Prisoner code",
@@ -66,7 +69,7 @@ export const PrisonerProfileSummery: React.FC<PrisonerProfileSummeryProps> = ({
             {data.nic}
           </p>
         </div>
-        <div className="bg-white w-2/3 h-fit p-10 rounded-3xl mt-auto mb-auto">
+        <div className="bg-white w-2/3 h-fit p-5  rounded-3xl mt-auto mb-auto relative">
           {Object.entries(data)
             .filter(([key]) => key !== "nic")
             .map(([key, value]) => (
@@ -77,6 +80,11 @@ export const PrisonerProfileSummery: React.FC<PrisonerProfileSummeryProps> = ({
                 {key === "dob" ? new Date(value as Date).toDateString() : value}
               </p>
             ))}
+          {enableEditButton && (
+            <button className="absolute bottom-3 right-2 p-3 rounded hover:bg-gray-100 transition cursor-pointer">
+              <img src={editIcon} alt="edit icon" className="w-5 h-5" />
+            </button>
+          )}
         </div>
       </div>
     </div>

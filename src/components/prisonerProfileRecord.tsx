@@ -67,7 +67,7 @@ export const PrisonerProfileRecord: React.FC<Props> = ({
         {onViewProfile && (
           <button
             onClick={handleView}
-            className="p-2 rounded hover:bg-gray-100 transition"
+            className="p-2 rounded hover:bg-gray-100 transition cursor-pointer"
             aria-label={`View profile of ${fullName}`}
           >
             <img src={eyeIcon} alt="View" className="w-5 h-5" />
