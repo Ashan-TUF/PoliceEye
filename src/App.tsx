@@ -25,7 +25,10 @@ function App() {
         <Route path="/identifiedGangs" element={<IdentifiedGangsScreen />} />
         <Route path="/manageOfficers" element={<ManageOfficersScreen />} />
         <Route path="/noticeBoard" element={<NoticeBoardScreen />} />
-        <Route path="/managePrisonerProfile" element={<ManagePrisonerProfileScreen />} />
+        <Route
+          path="/managePrisonerProfile/:prisonerCode"
+          element={<ManagePrisonerProfileScreen />}
+        />
       </Routes>
     </Router>
   );

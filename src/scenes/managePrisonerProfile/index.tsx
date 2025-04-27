@@ -6,8 +6,14 @@ import { PrisonerProfileSummery } from "../../components/prisonerProfileSummery"
 import profileImg from "../../assets/images/Ashan-Prof.jpg";
 import { PrisonerCriminalRecordView } from "../../components/prisonerCriminalRecordView";
 import editIcon from "../../assets/icons/edit.png";
+import { Navigate, useParams } from "react-router-dom";
 
 export const ManagePrisonerProfileScreen = () => {
+  const { prisonerCode } = useParams<{ prisonerCode: string }>();
+  if (!prisonerCode) {
+    return <Navigate to="/404" />;
+  }
+  console.log(prisonerCode);
   const criminalRecords = [
     {
       crime: "Robbery at City Mall",
@@ -88,7 +94,7 @@ export const ManagePrisonerProfileScreen = () => {
   };
 
   const prisonerData = {
-    prisonerCode: "PR123456",
+    prisonerCode,
     fullName: "Kamal Perera",
     nickName: "Kama",
     dob: new Date("1990-05-10"),

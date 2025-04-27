@@ -16,7 +16,7 @@ interface PrisonerProfileRecordProps {
 
 interface Props {
   data: PrisonerProfileRecordProps;
-  onViewProfile?: (prisonerCode: string) => void;
+  onViewProfile: (prisonerCode: string) => void;
 }
 
 export const PrisonerProfileRecord: React.FC<Props> = ({
@@ -27,9 +27,7 @@ export const PrisonerProfileRecord: React.FC<Props> = ({
     data;
 
   const handleView = () => {
-    if (onViewProfile) {
-      onViewProfile(prisonerCode);
-    }
+    onViewProfile(prisonerCode);
   };
 
   const getStatusColor = () => {
@@ -63,16 +61,14 @@ export const PrisonerProfileRecord: React.FC<Props> = ({
       <div className="flex w-1/3 xl:w-1/6 justify-center items-center">
         <span className={`text-sm ${getStatusColor()}`}>{releaseStatus}</span>
       </div>
-      <div className="hidden xl:flex w-1/6 justify-center items-center cursor-pointer">
-        {onViewProfile && (
-          <button
-            onClick={handleView}
-            className="p-2 rounded hover:bg-gray-100 transition cursor-pointer"
-            aria-label={`View profile of ${fullName}`}
-          >
-            <img src={eyeIcon} alt="View" className="w-5 h-5" />
-          </button>
-        )}
+      <div className="flex grow justify-center items-center cursor-pointer">
+        <button
+          onClick={handleView}
+          className="p-2 rounded hover:bg-gray-100 transition cursor-pointer"
+          aria-label={`View profile of ${fullName}`}
+        >
+          <img src={eyeIcon} alt="View" className="w-5 h-5" />
+        </button>
       </div>
     </div>
   );

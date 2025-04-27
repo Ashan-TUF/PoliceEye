@@ -1,11 +1,14 @@
 import { PrisonerProfileRecord } from "./prisonerProfileRecord";
 import profile from "../assets/images/Ashan-Prof.jpg";
-
-const viewPrisonerProfile = (prisonerCode: string) => {
-  console.log(prisonerCode);
-};
+import { useNavigate } from "react-router-dom";
 
 export const PrisonerProfilesView = () => {
+  const navigate = useNavigate();
+
+  const viewPrisonerProfile = (prisonerCode: string) => {
+    navigate(`/managePrisonerProfile/${prisonerCode}`);
+  };
+
   const prisonerData = [
     {
       profilePic: profile,
