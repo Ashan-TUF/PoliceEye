@@ -162,7 +162,7 @@ const ModelViewer: React.FC<ModelProps> = ({
           )}
         </div>
       )}
-      <Canvas camera={{ position: [0, 1, 5], fov: 50 }}>
+      <Canvas camera={{ position: [0, 1, 5], fov: 50 }} className="cursor-grab">
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={30} />
         <Suspense

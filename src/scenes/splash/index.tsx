@@ -7,7 +7,7 @@ import sriLankaLogo from "../../assets/images/sriLnkaPoliceLogo.png";
 const SplashScreen = () => {
   return (
     <div className="w-screen h-screen relative flex items-center justify-center">
-      <Canvas camera={{ position: [0, 1, 5], fov: 50 }}>
+      <Canvas camera={{ position: [0, 1, 5], fov: 50 }} className="cursor-grab">
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={100} />
         <SplashModel url="../models/justice law goddess.glb" />
