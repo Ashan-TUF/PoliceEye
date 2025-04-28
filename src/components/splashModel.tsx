@@ -36,9 +36,9 @@ export function SplashModel({ url }: ModelProps) {
     <primitive
       ref={modelRef}
       object={scene}
-      scale={[0.8, 0.8, 0.8]}
-      rotation={[0, -Math.PI / 6, 0]}
-      position={[0, 0.1, 0]}
+      scale={[1.4, 1.4, 1.4]}
+      rotation={[0, 0.3, 0]}
+      position={[0, -1.3, 0]}
     />
   );
 }

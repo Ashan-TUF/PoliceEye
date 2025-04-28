@@ -10,7 +10,7 @@ const SplashScreen = () => {
       <Canvas camera={{ position: [0, 1, 5], fov: 50 }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={100} />
-        <SplashModel url="../models/notorius_face_abstract_geometry_animation_loop.glb" />
+        <SplashModel url="../models/justice law goddess.glb" />
         <OrbitControls />
       </Canvas>
       <img
