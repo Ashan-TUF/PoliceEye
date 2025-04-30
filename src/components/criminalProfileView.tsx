@@ -1,16 +1,51 @@
-import profileImg from "../assets/images/Ashan-Prof.jpg";
 import warningIcon from "../assets/icons/warning.png";
-const CriminalProfileView = () => {
+import React from "react";
+
+interface ProfileImage {
+  resourceUrl: string;
+}
+interface CriminalUser {
+  firstName: string;
+  lastName: string;
+  nickName?: string;
+  dob: string;
+  nationality: string;
+  address: string;
+  job: string;
+  sex?: string;
+  nic: string;
+  profileImg: ProfileImage[];
+}
+interface CriminalProfileViewProps {
+  userData: CriminalUser;
+}
+
+const CriminalProfileView: React.FC<CriminalProfileViewProps> = ({
+  userData,
+}) => {
+  const {
+    firstName,
+    lastName,
+    nickName,
+    dob,
+    nationality,
+    address,
+    job,
+    sex = "N/A",
+    nic,
+    profileImg,
+  } = userData;
+
   const criminalData = {
-    fullName: "Ashan Kavindu Kalupahana",
-    nickName: "Sudda",
-    dob: "19/08/2001",
-    age: 23,
-    nic: "200123202557",
-    sex: "Male",
-    nationality: "Sinhala",
-    address: "150/A/1, Temple road, Thibbotugoda",
-    job: "Software Engineer",
+    fullName: `${firstName} ${lastName}`,
+    nickName: nickName || "-",
+    dob: new Date(dob).toLocaleDateString(),
+    age: new Date().getFullYear() - new Date(dob).getFullYear(),
+    nic: nic,
+    sex: sex,
+    nationality: nationality,
+    address: address,
+    job: job,
   };
 
   const summary = {
@@ -26,7 +61,7 @@ const CriminalProfileView = () => {
       <div className="flex flex-col gap-5 w-1/3">
         <p className="text-2xl font-semibold ms-10">Profile</p>
         <img
-          src={profileImg}
+          src={profileImg[0]?.resourceUrl || ""}
           alt="profile image"
           className="w-40 h-40 lg:w-52 lg:h-52 rounded-full border-2 border-[#FA4040] mx-auto"
         />
